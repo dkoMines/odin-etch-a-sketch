@@ -15,9 +15,13 @@
         </div>
         <div class="content">
             <div class="control_panel">
-                <div class="size_selector">Size Selector: <div id="size">64</div></div>
-                <input class="slider" type="range" min="4" max="128">
+                <div class="size_selector">Size Selector: <div id="size">16</div></div>
+                <input class="slider" id="pixSlider" type="range" min="4" max="64" value="16" step="4" name="pixSlider" autocomplete="off">
                 <button id="reset">Reset</button>
+                <div class="flex">
+                    <input type="checkbox" id="rainbow" class="checkbox" unchecked autocomplete="off">Rainbow</input>
+                </div>
+
             </div>
             <div class="sketch">
                 <!-- this is where we color! -->

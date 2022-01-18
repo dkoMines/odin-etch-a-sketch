@@ -22,22 +22,46 @@ function removeSketchDivs(){
     rowDivs.forEach(function (row) {
         sketch.removeChild(row);
     });
-    createSketchDivs(16);
 }
 
 function addMouseEnter(item){
     item.addEventListener('mouseenter', e => {
         console.log(item.id);
-        item.style['background-color'] = 'red';
+        if (rainbowCheck.checked){
+            let nextColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+            rainbowCheck.style['background-color'] = nextColor;
+            item.style['background-color'] = nextColor;
+        } else {
+            item.style['background-color'] = 'black';
+        }
     });
 }
-
-createSketchDivs(16);
 
 
 const reset = document.querySelector('button#reset');
 reset.addEventListener('click', e =>{
     removeSketchDivs();
     console.log("Reset Sketch");
+    const pixSlider = document.querySelector('input#pixSlider');
+    createSketchDivs(pixSlider.value);
+});
 
+const pixSlider = document.querySelector('input#pixSlider');
+pixSlider.addEventListener('change', (e) => {
+    const pixSize = document.querySelector('div#size');
+    pixSize.textContent = pixSlider.value;
+    removeSketchDivs()
+    createSketchDivs(pixSlider.value);
+});
+
+createSketchDivs(pixSlider.value);
+
+const rainbowCheck = document.querySelector('input#rainbow');
+rainbowCheck.addEventListener('change', (e) => {
+    if (rainbowCheck.checked){
+        rainbowCheck.style['background-color'] = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+    } else {
+        rainbowCheck.style['background-color'] = 'white';
+    }
+    console.log(rainbowCheck.checked);
 });

@@ -23,12 +23,16 @@ body, html {
     justify-content: space-around;
     align-items: center;
     padding: 64px;
+    flex-wrap: wrap;
+    gap: 32px;
 }
 
 .control_panel {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    border: 1px black solid;
+    padding: 32px;
 }
 
 .sketch {
@@ -39,6 +43,7 @@ body, html {
     flex-direction: column;
     margin: 0;
     padding: 0;
+    border-radius: 10px;
 }
 
 .row {
@@ -49,12 +54,47 @@ body, html {
 }
 
 .pixel {
-    flex: 1 0 0;
+    flex: 1 1 10px;
     border: 1px black solid;
     margin: 0;
     padding: 0;
     transition: background-color 1s;
 }
+
+.size_selector {
+    display: flex;
+    gap: 16px;
+}
+
+button#reset {
+    margin: 16px;
+    padding: 8px;
+    background-color: orange;
+}
+
+input#rainbow {
+    cursor: pointer;
+    background-color: white;
+    transition: .4s;
+    border-radius: 5px;
+    appearance: none;
+    border: 1px black solid;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+/* 
+input#rainbow:checked {
+    background-color: red; 
+} */
+
+.flex {
+    display: flex;
+    justify-content:space-around;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
 
 /* .footer {
     flex: 0 1 10%;
