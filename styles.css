@@ -1,0 +1,61 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.site {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 32px;
+}
+
+.header{
+    text-align: center;
+    flex: 0 1 auto;
+}
+
+.content {
+    flex: 1 1 auto;
+    border-top: 3px black solid;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 64px;
+}
+
+.control_panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.sketch {
+    border: 3px black solid;
+    width: 40em;
+    height: 40em;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    flex: 1 0 0;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.pixel {
+    flex: 1 0 0;
+    border: 1px black solid;
+    margin: 0;
+    padding: 0;
+    transition: background-color 1s;
+}
+
+/* .footer {
+    flex: 0 1 10%;
+} */
